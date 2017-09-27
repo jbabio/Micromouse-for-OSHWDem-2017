@@ -1,36 +1,45 @@
-# Building a Micromouse for Maze Solving contest at OSHWDem 2017
-Software for a Maze Solver robot (Micromouse) using cheap 28BYJ-48 motors and 5 Ir sensors.
+# Micromouse for the Maze Solving contest at OSHWDem 2017 
+(https://oshwdem.org/)
 
-__Note: This is a bit of a scratch to learn how to implement the software of a maze solver robot__
+__Note: This first version will use Left/Right algorithm to solve the maze__
 
+## Hardware Used:
+  * Robot base: Modified Escornabot (http://escornabot.com) (https://github.com/escornabot)
+  * Main Electronics: Arduino UNO
+  * Motors: 28BYJ-48
+  * Motor Drivers: ULN2003 breakout board.
+  * Sensors:
+    * 5 Sharp GP2Y0A51SK0F  2-15 cm
+    * 1 HMC6352 Compass (not Implemented yet)
+    * 1 ADXL330K Acelerometer (not Implemented yet)
+    
 ## Acknowledgements
 
-* Andrew Kramer (https://github.com/1988kramer) for inspiration about implementing the sensor polling
+* Mike McCauley for the AccelStepper library.
+* Julien de la Bruère-Terreault for the SharpDistSensor library.
+* Andrew Kramer (https://github.com/1988kramer) for inspiration about implementing the sensor polling.
 * 42Bots.com (http://42Bots.com / https://github.com/42Bots) For their example to use 28BYJ-48 motors with accelstepper library.
-* Anyone who creates and shares Open Source Hardware or Software.
+* Anyone who create or share Open Source Hardware or Software.
 
 ## Dependencies.
-
-
-
-
-## Files
-
-
-
-
-## Usage
-
-
+SharpDistSensor Library for Arduino, By Julien de la Bruère-Terreault. MIT License 
+  * (https://github.com/DrGFreeman/SharpDistSensor)
+  
+AccelStepper library for Arduino, Copyright (C) 2010 Mike McCauley. GPL V2 
+  * http://www.airspayce.com/mikem/arduino/AccelStepper/
+  * Class Reference: http://www.airspayce.com/mikem/arduino/AccelStepper/classAccelStepper.html
 
 ## Current status
 
-* ---
+Starting to integrate the systems.
+We can read the IR sensors and move the motors but no algorithm is implemented yet.
 
 ## Known issues
 
-None
+We can't solve a maze yet :'(
 
 ## Todo
 
-* Everithing
+* Finish robot asembly.
+* Desigh the Maze Solving algorithm.
+* Implement the algorithm in software.
