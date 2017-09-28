@@ -38,8 +38,8 @@ Dependencies.
 #include "HAL.h"  //Local library containing the Hardware setup specific for this robot.
 
 // Initialize with pin sequence IN1-IN3-IN2-IN4 for using the AccelStepper with 28BYJ-48
-AccelStepper stepper1(HALFSTEP, motor1Pin1, motor1Pin3, motor1Pin2, motor1Pin4);
-AccelStepper stepper2(HALFSTEP, motor2Pin1, motor2Pin3, motor2Pin2, motor2Pin4);
+AccelStepper stepper1(HALFSTEP, motor1Pin1, motor1Pin3, motor1Pin2, motor1Pin4); // Right Stepper
+AccelStepper stepper2(HALFSTEP, motor2Pin1, motor2Pin3, motor2Pin2, motor2Pin4); // Left Stepper
 
 // Window size of the median filter for the IR sensors(odd number, 1 = no filtering)
 const byte mediumFilterWindowSize = 5;
@@ -58,21 +58,15 @@ unsigned int distance[5] = { 0, 0, 0, 0, 0 };
 
 void setup() {
   Serial.begin(9600);
-  //stepper1
-  stepper1.setMaxSpeed(1000.0);
-  stepper1.setAcceleration(100.0);
-  //stepper1.setSpeed(200);
-  //stepper1.moveTo(20000);
-  //stepper2
-  stepper1.setMaxSpeed(1000.0);
-  stepper1.setAcceleration(100.0);
-  //stepper1.setSpeed(200);
+  //stepper1.setMaxSpeed(MAX_SPEED);
+  //stepper1.setAcceleration(ACELERATION);
+  //stepper1.setSpeed(300);
   //stepper1.moveTo(20000);
 }
 
 void loop() {
 GetDistance();
-
+mazeSolver ();
 
 
   //When the stepper reaches the target position...

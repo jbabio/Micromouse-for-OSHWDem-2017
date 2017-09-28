@@ -5,11 +5,11 @@ void GetDistance(){
     distance[i] = irSensor[i].getDist();
   }
 
-  // Print distances measured to Serial
+  /*// Print distances measured to Serial
   for (int i = 0; i < NUM_SENSORS; i++)
   {
   Serial.print(distance[i]);
   Serial.print("\t");
   }
-  Serial.println();
+  Serial.println();*/
 }
