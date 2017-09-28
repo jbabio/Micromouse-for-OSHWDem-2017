@@ -31,15 +31,17 @@ AccelStepper library for Arduino, Copyright (C) 2010 Mike McCauley. GPL V2
 
 ## Current status
 
-Starting to integrate the systems.
-We can read the IR sensors and move the motors but no algorithm is implemented yet.
+Right hand algorithm implemented
 
 ## Known issues
 
-We can't solve a maze yet :'(
+Aceleration is too slow, need to revise AccelStepper library to speed it up.
 
 ## Todo
 
-* Finish robot asembly.
-* Desigh the Maze Solving algorithm.
-* Implement the algorithm in software.
+* Read IR Sensors -> DONE
+* Control motors -> DONE
+* Center of maze detection - > PENDING
+* Right hand algorithm -> DONE
+* Left Hand algorithm -> PENDING
+* Flood Algorithm -> PENDING
