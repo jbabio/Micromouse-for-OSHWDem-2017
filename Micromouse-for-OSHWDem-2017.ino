@@ -38,8 +38,8 @@ Dependencies.
 #include "HAL.h"  //Local library containing the Hardware setup specific for this robot.
 
 // Initialize with pin sequence IN1-IN3-IN2-IN4 for using the AccelStepper with 28BYJ-48
-AccelStepper stepper1(HALFSTEP, motor1Pin1, motor1Pin3, motor1Pin2, motor1Pin4); // Right Stepper
-AccelStepper stepper2(HALFSTEP, motor2Pin1, motor2Pin3, motor2Pin2, motor2Pin4); // Left Stepper
+AccelStepper leftMotor(AccelStepper::FULL4WIRE, motor1Pin1, motor1Pin3, motor1Pin2, motor1Pin4); // Left Stepper
+AccelStepper rightMotor(AccelStepper::FULL4WIRE, motor2Pin1, motor2Pin3, motor2Pin2, motor2Pin4); // Right Stepper
 
 // Window size of the median filter for the IR sensors(odd number, 1 = no filtering)
 const byte mediumFilterWindowSize = 5;
@@ -55,13 +55,18 @@ SharpDistSensor irSensor [NUM_SENSORS] = {
 
 //Create an array to store the distances measured by the sensors. This allows us to access them in a for loop.
 unsigned int distance[5] = { 0, 0, 0, 0, 0 };
-
+int irChecksum =0;
+long leftMotorPosition = 0;
+long rightMotorPosition = 0;
 void setup() {
   Serial.begin(9600);
-  //stepper1.setMaxSpeed(MAX_SPEED);
-  //stepper1.setAcceleration(ACELERATION);
-  //stepper1.setSpeed(300);
-  //stepper1.moveTo(20000);
+  GetDistance();
+  //delay(10000);
+  PrintDistances ();
+  //leftMotor.setMaxSpeed(MAX_SPEED);
+  //leftMotor.setAcceleration(ACELERATION);
+  //leftMotor.setSpeed(300);
+  //leftMotor.moveTo(20000);
 }
 
 void loop() {
@@ -70,11 +75,11 @@ mazeSolver ();
 
 
   //When the stepper reaches the target position...
-  if (stepper1.distanceToGo() == 0) {
-    //stepper1.moveTo(-stepper1.currentPosition());
+  if (leftMotor.distanceToGo() == 0) {
+    //leftMotor.moveTo(-leftMotor.currentPosition());
     
   }
 
-  stepper1.run();
-  stepper2.run();
+  leftMotor.run();
+  rightMotor.run();
 }

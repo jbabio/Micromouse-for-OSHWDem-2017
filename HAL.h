@@ -1,13 +1,13 @@
 // Motor definitions
 #define HALFSTEP 8
 #define NUM_SENSORS 5
-#define STEPS_PER_CELL 2000
-#define STEPS_FROM_EDGE_TO_CENTER 2000
-#define STEPS_TO_TURN_90_DEG 2000
-#define STEPS_TO_TURN 2000
+#define STEPS_PER_CELL 1000
+#define STEPS_FROM_EDGE_TO_CENTER 1000
+#define STEPS_TO_TURN_90_DEG 1000
+#define STEPS_TO_TURN 2200
 #define SPEED 1000
 #define MAX_SPEED 1000.0
-#define ACELERATION 100.0
+#define ACELERATION 100000.0
 
 
 #define motor1Pin1 2 // IN1 on the ULN2003 driver 1
