@@ -8,8 +8,11 @@ __Note: This version uses Left/Right algorithm to solve the maze, No further dev
 ## Hardware Used:
   * Robot base: Modified Escornabot (http://escornabot.com) (https://github.com/escornabot)
   * Main Electronics: ~~Arduino UNO~~ Ogaki board from @abierto-cc 
-  * Motors: 28BYJ-48 5V
+  * Motors: 2x 28BYJ-48 5V
   * Motor Drivers: ~~2x ULN2003 breakout boards.~~ 1x ULN2803 in the Ogaki board
+  * Power:
+    * UBSAN 610mah, 2S Battery.
+    * 3A 2-6S 5V BEC
   * Sensors:
     * 5 Sharp GP2Y0A51SK0F  2-15 cm
     * ~~1 HMC6352 Compass (not Implemented yet)~~
@@ -17,7 +20,7 @@ __Note: This version uses Left/Right algorithm to solve the maze, No further dev
     
 ## Acknowledgements
 
-* @Escornabot creators for the design and sofware www.escornabot.com https://github.com/escornabot
+* @Escornabot creators for the design and software www.escornabot.com https://github.com/escornabot
 * Mike McCauley for the AccelStepper library.
 * Julien de la Bruère-Terreault for the SharpDistSensor library. https://github.com/DrGFreeman
 * Andrew Kramer (https://github.com/1988kramer) for inspiration about implementing the sensor polling.
